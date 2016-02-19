@@ -9,33 +9,68 @@
 </body>
 <script>
 
-			var myData = [ 10,15,20,30,45,55,45,50,45,35,20,10,15,20,30,45,55,45,50,45,35,20,10,15,20,30,45,55,45,50,45,35,20,10,15,20,30,45,55,45,50,45,35,20,10,15,20,30,45,55,45,50,45,35,20 ];
+
+			var myData = [ 10,15,20,30,45,55,45,50,45,35,20 ];
 			var svgWidth = 500;
 			var svgHeight = 300;
 			var spacing = 2;
 			var svg = d3.select("body")
-						.append("svg")
-						.attr("width",500)
-						.attr("height",300)
-						.attr("style","background-color:#ddd"); 
+				.append("svg")
+					.attr("width",500)
+					.attr("height",300)
+					.attr("style","background-color:#ddd"); 
 
-						svg.selectAll("rect")
-						.data(myData)
-						.enter()
-						.append("rect")
-						.attr("x", function(d,i){return i * 30;}) /*multiply the index*/
-						.attr("y", 20)
-						.attr("width", 30)
-						.attr("height", function(d){return d * 5})
-						.attr("x", function(d, i){return i * (30 + 2)}) /*creating border for rect*/
-						.attr("y", function(d){return 300 - d}) /*height is 300*/
-						.attr("y", function(d){return 300 - d * 5})
-						.attr("fill", "#30C5C7")
-						.attr("x",function(d,i){
-							return i * (svgWidth / myData.length)
-						})
-						.attr("width",(svgWidth	/ myData.length) - spacing);
-	
+			
+			svg.selectAll("rect")
+				.data(myData)
+				.enter()
+				.append("rect")
+					.attr("x", function(d,i){return i * 30}) // multiply the index
+					.attr("y", 20)
+					.attr("width", 30)
+					.attr("height", function(d){return d * 5})
+					.attr("x", function(d, i){return i * (30 + 2)}) // creating border for rect
+					.attr("y", function(d){return 300 - d}) // height is 300
+					.attr("y", function(d){return 300 - d * 5})
+					.attr("fill", "#30C5C7")
+					.attr("x",function(d,i){
+						return i * (svgWidth / myData.length)
+					})
+					.attr("width",(svgWidth	/ myData.length) - spacing)
+
+
+
+			var g = svg.append('g');
+
+			g.selectAll("rect")
+				.data(myData)
+				.enter()
+				.append("rect")
+				.attr("x",30)
+				.attr("y",0)
+				.attr("width",0)
+				.attr("height",0)
+				.transition().duration(500)
+				//rest of attribute settings as before
+				.attr("fill","#30C5C7")
+				//.attr("x",0)
+				//.attr("y",0)
+				//.attr("width",0)
+				.attr("height",0)
+				.transition().duration(5000)
+				.attr("height",function(d){return d});
+
+			var myNewData = [ 40,25,10,35,45,6,40,75,50,80 ];
+
+			g.selectAll("rect") //existing rect elements
+				.data(myNewData)
+					.attr("y", function(d){return (svgHeight - d)}) // dis from the new array
+					.attr("height", function(d){return d });
+
+
+			var g = svg.append('g')
+				    .attr("transform","translate(0,-20)");
+
 /*page 19 of 25*/
 </script>
 </html>
