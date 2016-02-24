@@ -87,7 +87,7 @@ input,select,button,textarea {outline:none;}
 .header-curency .curency-drop a {font-size:11px;color:#697374;margin:0px;padding:0px;height:auto;display:inline;text-transform:uppercase;border:0px;}
 .header-b {height:89px;width:100%;background:#fff;-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.11);-moz-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.11);box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.11);}
 .header-logo {float:left;margin:-20px 0px 0px 0px;}
-.header-logo img {width:188px;}
+.header-logo img {width:400px; padding-top: 40px;}
 .fixed .header-logo img {width:39px;}
 .header-right {float:right; margin-top:37px;}
 .header-nav {float:right;}
@@ -2546,8 +2546,7 @@ nav ul,nav ul li {margin:0px;padding:0px;list-style:none;}
 .mp-popular {padding-left: 20px; padding-right: 20px;}
 .mp-popular-row .offer-slider-i {width:31.3%;}
 .testimonials-b {padding-left: 60px; padding-right: 60px;}  
-.row {display:none;}
-.row.collapse {display:block;}
+
 .datepicker-popup {margin-top:15px; margin-left:-8px;}
 .form-element-popup-container-spacer {display:none;}
 

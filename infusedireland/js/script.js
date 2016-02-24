@@ -44,16 +44,16 @@ $(document).ready(function(){
 		$('.header-b').addClass('fixed');
 		$('.header-logo').css('margin-top','10px')
 		$('.header-right').css('margin-top','21px');
-		$('.header-logo').find('img').attr('src','img/logo-a.png');
+		/*$('.header-logo').find('img').attr('src','img/epicfitness-logo.svg');*/
 
 	}
 	$headerUp = function() {
 		$('.header-a').slideDown(150);
 		$('.header-b').removeClass('fixed');
 		$('.header-b').css('height','89px');
-		$('.header-logo').css('margin-top','26px');
+		/*$('.header-logo').css('margin-top','26px');*/
 		$('.header-right').css('margin-top','37px');
-		$('.header-logo').find('img').attr('src','img/logo.png');
+		/*$('.header-logo').find('img').attr('src','img/epicfitness-logo.svg');*/
 	}
 
 	$(window).scroll(function(){
